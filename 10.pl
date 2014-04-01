@@ -1,2 +1,3 @@
-queatao10(_, _, [], [_|_]).
-questao10(A, B, [I | Li], Lf):- append(Lf, [I], L), questao10(A, B, Li, L).
+intervalo(_, _, [], []).
+intervalo(A, B, [X | Li], [X | Lf]):- (X >= A, X =< B), intervalo(A, B, Li, Lf).
+intervalo(A, B, [_ | Li], Li):- intervalo(A, B, Li, Li).
